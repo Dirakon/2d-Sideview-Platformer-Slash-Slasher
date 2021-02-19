@@ -44,7 +44,7 @@ public class CharacterScript : MonoBehaviour
                 float rem = spriteR.transform.localEulerAngles.z;
                 if (rem > 180)
                     rem -= 360;
-                Debug.Log(spriteR.transform.localEulerAngles.z);
+           //     Debug.Log(spriteR.transform.localEulerAngles.z);
                // spriteR.flipX = true;
             //    spriteR.transform.localEulerAngles = new Vector3(spriteR.transform.localEulerAngles.x, spriteR.transform.localEulerAngles.y, -Mathf.Abs(rem));
             }
@@ -67,7 +67,7 @@ public class CharacterScript : MonoBehaviour
         }
         else
         {
-            Debug.Log(angle);
+           // Debug.Log(angle);
             if (angle < -90)
             {
                 angle = -180 - angle;

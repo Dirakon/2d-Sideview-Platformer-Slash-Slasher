@@ -7,11 +7,11 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam = GetComponent<Camera>();
     }
 
     public CharacterScript character;
-
+    Camera cam;
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -31,6 +31,6 @@ public class Player : MonoBehaviour
             Debug.Log("BUTTON");
             character.CoolAttack();
         }
-        character.RotateTowards(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+        character.RotateTowards(cam.ScreenToWorldPoint(Input.mousePosition));
     }
 }
