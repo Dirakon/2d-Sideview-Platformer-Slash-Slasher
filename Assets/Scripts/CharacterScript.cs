@@ -12,6 +12,7 @@ public class CharacterScript : MonoBehaviour
 
     private void Awake()
     {
+        prevLayer = LayerMask.LayerToName(gameObject.layer);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -27,6 +28,8 @@ public class CharacterScript : MonoBehaviour
     public float JumpReloadTime;
     float jumpReload = 0;
     Vector2[] normals = new Vector2[] { Vector2.up };
+
+
 
     public void RotateTowards(Vector2 coords)
     {
@@ -90,7 +93,7 @@ public class CharacterScript : MonoBehaviour
         // Debug.Log(coords);
     }
 
-    IEnumerator hideAndRehideInTime(float whatTime, SpriteRenderer what)
+    IEnumerator hideAndRehideInTime(float whatTime,float kd, SpriteRenderer what)
     {
         if (!attackGoing)
         {
@@ -98,40 +101,67 @@ public class CharacterScript : MonoBehaviour
             what.color = Color.red;
             yield return new WaitForSeconds(whatTime);
             what.color = Color.white;
+            yield return new WaitForSeconds(kd);
             attackGoing = false;
         }
     }
     public float bulletStrenght = 10f;
-
-    IEnumerator coolAttack(float whatTime)
+    public float bulletLifetime = 2f;
+    public float dashMultiplier = 0.5f;
+     bool dashIsOn = false;
+    bool dashIsAvaliable = true;
+    public float dashDuration=0.25f, dashKD=5f;
+    IEnumerator dash(float duration,float kd)
+    {
+        if (dashIsAvaliable)
+        {
+            float prev = rb.gravityScale;
+            dashIsAvaliable = false;
+            rb.gravityScale = 0;
+            dashSide = -1029;
+            dashIsOn = true;
+            //  what.color = Color.white;
+            yield return new WaitForSeconds(duration);
+            dashIsOn = false;
+            rb.gravityScale = prev;
+            yield return new WaitForSeconds(kd);
+            dashIsAvaliable = true;
+        }
+    }
+    public void DashOn()
+    {
+        StartCoroutine(dash(dashDuration,dashKD));
+    }
+    IEnumerator coolAttack(float kd,Vector2 pos)
     {
         if (!coolAttackGoing)
         {
             coolAttackGoing = true;
             var it = Instantiate(bulletPrefab, selectedItems[0].transform.position, Quaternion.identity).GetComponent<Bullet>();
-
-            Vector2 mov = selectedItems[0].transform.position;
+            it.runTime = bulletLifetime;
+            Vector2 mov = pos;
             mov.x = mov.x - thingRotator.transform.position.x;
             mov.y = mov.y - thingRotator.transform.position.y;
-            it.rb.velocity = mov * bulletStrenght;
-            // what.color = Color.red;
-            yield return new WaitForSeconds(whatTime);
+            it.rb.velocity = mov.normalized * bulletStrenght;
             //  what.color = Color.white;
+            yield return new WaitForSeconds(kd);
             coolAttackGoing = false;
         }
     }
     bool attackGoing = false;
     bool coolAttackGoing = false;
     public GameObject bulletPrefab;
+    public float meleeKD=1f;
     public void Attack()
     {
-        StartCoroutine(hideAndRehideInTime(duration, selectedItems[0]));
+        StartCoroutine(hideAndRehideInTime(meleeKD,duration, selectedItems[0]));
     }
-    public void CoolAttack()
+    public void CoolAttack(Vector2 pos)
     {
-        StartCoroutine(coolAttack(duration));
+        StartCoroutine(coolAttack(duration,pos));
     }
     public float duration = 1f;
+    public float coolDuration = 2f;
 
 
     public void Jump(float jumpStrenghter = 1f)
@@ -152,9 +182,22 @@ public class CharacterScript : MonoBehaviour
 
     public float jumpStrenght, moveSpeed;
     public SideChecker left, right;
+    string prevLayer;
+    float dashSide=-1029;
     // void 
     public void Move(float whereHowMuch)
     {
+        if (dashIsOn)
+        {
+            if (dashSide == -1029)
+            {
+                if (whereHowMuch == 0)
+                    return;
+                dashSide = whereHowMuch/Mathf.Abs(whereHowMuch);
+            }
+            whereHowMuch = dashSide * dashMultiplier;
+            Debug.Log(whereHowMuch);
+        }
         //  rb.AddForce(new Vector2(Time.deltaTime * whereHowMuch * moveSpeed,0), ForceMode2D.Impulse);
         //rb.AddForce(new Vector2(Time.deltaTime * whereHowMuch * moveSpeed, 0), ForceMode2D.Impulse);
         float change = Time.deltaTime * whereHowMuch * moveSpeed;
@@ -174,7 +217,7 @@ public class CharacterScript : MonoBehaviour
         }
         else
         {
-            gameObject.layer = LayerMask.NameToLayer("Default");
+            gameObject.layer = LayerMask.NameToLayer(prevLayer);
 
         }
     }

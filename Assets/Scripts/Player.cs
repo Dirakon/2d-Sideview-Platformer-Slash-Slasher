@@ -15,10 +15,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        Vector2 mouseCoords = cam.ScreenToWorldPoint(Input.mousePosition);
         character.Move(Input.GetAxis("Horizontal"));
         if (Input.GetKey(KeyCode.Space))
         {
             character.Jump();
+        }
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift))
+        {
+            character.DashOn();
         }
         character.Fall(Input.GetKey(KeyCode.S));
         if (Input.GetMouseButtonDown(0))
@@ -29,8 +34,8 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("BUTTON");
-            character.CoolAttack();
+            character.CoolAttack(mouseCoords);
         }
-        character.RotateTowards(cam.ScreenToWorldPoint(Input.mousePosition));
+        character.RotateTowards(mouseCoords);
     }
 }

@@ -27,30 +27,50 @@ public class Enemy : MonoBehaviour
 
 
     // Start is called before the first frame update
+    public float detectionDistance = 100f;
     void Start()
     {
         seeker = GetComponent<Seeker>();
         var p = guy.GetComponent<BoxCollider2D>();
         toGetRidOf = p.size.y / 2;
-        Debug.Log(toGetRidOf);
+
         InvokeRepeating("UpdatePath", 0f, 1f);
     }
 
     // Update is called once per frame
     void UpdatePath()
     {
-        seeker.StartPath(transform.position, target.position, OnPathComplete);
+        haveFaceContact = ! ((target.transform.position - transform.position).magnitude > detectionDistance) && Physics2D.Raycast(transform.position, target.transform.position - transform.position, (target.transform.position - transform.position).magnitude, colliderRaycastMask).collider == null;
+        if (haveFaceContact)
+            seeker.StartPath(transform.position, target.position, OnPathComplete);
     }
-
+    public bool haveFaceContact = false;
+    public LayerMask colliderRaycastMask;
+    public bool isMelee;
+    public bool isRanged;
+    public float desiredDistance=10f;
     private void FixedUpdate()
     {
         if (path == null)
             return;
         guy.RotateTowards(target.position);
-        if (currentWaypoint > path.vectorPath.Count)
+        if (haveFaceContact)
+        {
+            if (isRanged)
+                guy.CoolAttack(target.position);
+            if (Vector2.Distance(transform.position,target.position) < desiredDistance)
+            {
+                return;
+            }
+        }
+        if (currentWaypoint >= path.vectorPath.Count)
         {
             reachedEnd = true;
-            guy.Attack();
+            if (haveFaceContact)
+            {
+                if (isMelee)
+                    guy.Attack();
+            }
             return;
         }
         else
@@ -59,7 +79,7 @@ public class Enemy : MonoBehaviour
         }
         do
         {
-            float dist = Vector2.Distance(transform.position, new Vector2( path.vectorPath[currentWaypoint].x, (path.vectorPath[currentWaypoint].y + transform.position.y)/2));
+            float dist = Vector2.Distance(transform.position, new Vector2(path.vectorPath[currentWaypoint].x, (path.vectorPath[currentWaypoint].y + transform.position.y) / 2));
             if (dist <= nextWaypointDistance)
             {
                 currentWaypoint++;
@@ -71,9 +91,9 @@ public class Enemy : MonoBehaviour
         } while (true);
         Vector2 dir = (path.vectorPath[currentWaypoint] - transform.position);
 
-         if (Mathf.Abs(dir.y) - toGetRidOf >0)
+        if (Mathf.Abs(dir.y) - toGetRidOf > 0)
         {
-          //  Debug.Log("RIIIIIID");
+            //  Debug.Log("RIIIIIID");
             if (dir.y < 0)
             {
                 dir.y = 0;
@@ -87,17 +107,17 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            Debug.Log(Mathf.Abs(dir.y) - toGetRidOf);
+
             guy.Fall(false);
         }
         dir = dir.normalized;
-        
+
         guy.Move(dir.x);
 
     }
     public CharacterScript guy;
     void Update()
     {
-        
+
     }
 }

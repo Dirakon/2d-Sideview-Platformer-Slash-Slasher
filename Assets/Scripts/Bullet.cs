@@ -9,6 +9,11 @@ public class Bullet : MonoBehaviour
     {
         
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+    public float runTime;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -17,6 +22,12 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (runTime > 0)
+        {
+            runTime -= Time.deltaTime;
+        }else
+        {
+            Destroy(gameObject);
+        }
     }
 }

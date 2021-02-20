@@ -410,7 +410,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 33.33334
+  m_GravityScale: 22.33334
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -434,11 +434,17 @@ MonoBehaviour:
   - {fileID: 1237125413557398433}
   jumpReloaded: 1
   JumpReloadTime: 0
-  bulletStrenght: 100
+  bulletStrenght: 500
+  bulletLifetime: 2
+  dashMultiplier: 3
+  dashDuration: 0.25
+  dashKD: 3
   bulletPrefab: {fileID: 3163236303391695057, guid: dee36bee0e1f3cb4d85c17331506e718,
     type: 3}
+  meleeKD: 1
   duration: 0.25
-  jumpStrenght: 6666
+  coolDuration: 2
+  jumpStrenght: 4444
   moveSpeed: 5000
   left: {fileID: 2115738247218007580}
   right: {fileID: 1857025552095397346}
