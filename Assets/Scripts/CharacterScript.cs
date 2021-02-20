@@ -12,6 +12,8 @@ public class CharacterScript : MonoBehaviour
 
     private void Awake()
     {
+        hp = maxHp;
+        attackEffect.myBoss = gameObject;
         prevLayer = LayerMask.LayerToName(gameObject.layer);
     }
 
@@ -97,10 +99,12 @@ public class CharacterScript : MonoBehaviour
     {
         if (!attackGoing)
         {
+            attackEffect.BeginAttack(meleeDamage);
             attackGoing = true;
             what.color = Color.red;
             yield return new WaitForSeconds(whatTime);
             what.color = Color.white;
+            attackEffect.EndAttack();
             yield return new WaitForSeconds(kd);
             attackGoing = false;
         }
@@ -132,6 +136,23 @@ public class CharacterScript : MonoBehaviour
     {
         StartCoroutine(dash(dashDuration,dashKD));
     }
+    public GameObject hpBar;
+    public static int ider = -1;
+    public int id = ider++;
+    public float maxHp = 100;
+    float hp;
+    public float meleeDamage = 50f;
+    public float rangedDamage = 50f;
+    public bool getHurt(float dmg)
+    {
+        hp -= dmg;
+        if (hp <= 0)
+        {
+            return true;
+        }
+        hpBar.transform.localScale = new Vector3(hp/maxHp,1, 1);
+        return false;
+    }
     IEnumerator coolAttack(float kd,Vector2 pos)
     {
         if (!coolAttackGoing)
@@ -139,26 +160,29 @@ public class CharacterScript : MonoBehaviour
             coolAttackGoing = true;
             var it = Instantiate(bulletPrefab, selectedItems[0].transform.position, Quaternion.identity).GetComponent<Bullet>();
             it.runTime = bulletLifetime;
+            it.myLayer = gameObject.layer;
+            it.myDmg = rangedDamage;
             Vector2 mov = pos;
-            mov.x = mov.x - thingRotator.transform.position.x;
-            mov.y = mov.y - thingRotator.transform.position.y;
+            mov.x = mov.x - transform.position.x;
+            mov.y = mov.y - transform.position.y;
             it.rb.velocity = mov.normalized * bulletStrenght;
             //  what.color = Color.white;
             yield return new WaitForSeconds(kd);
             coolAttackGoing = false;
         }
     }
+    public AttackZone attackEffect;
     bool attackGoing = false;
     bool coolAttackGoing = false;
     public GameObject bulletPrefab;
     public float meleeKD=1f;
     public void Attack()
     {
-        StartCoroutine(hideAndRehideInTime(meleeKD,duration, selectedItems[0]));
+        StartCoroutine(hideAndRehideInTime( duration,meleeKD, selectedItems[0]));
     }
     public void CoolAttack(Vector2 pos)
     {
-        StartCoroutine(coolAttack(duration,pos));
+        StartCoroutine(coolAttack(coolDuration,pos));
     }
     public float duration = 1f;
     public float coolDuration = 2f;
@@ -225,6 +249,10 @@ public class CharacterScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
         if (jumpReload > 0)
             jumpReload -= Time.deltaTime;
     }

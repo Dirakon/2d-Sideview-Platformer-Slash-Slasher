@@ -10,15 +10,20 @@ public class SideChecker : MonoBehaviour
 
     }
     public int counter = 0;
+    public LayerMask whoToStopBefore;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlatformEffector2D>() == null)
+        if (whoToStopBefore == (whoToStopBefore | (1 << collision.gameObject.layer)))
+        {
             counter++;
+        }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<PlatformEffector2D>() == null)
+        if (whoToStopBefore == (whoToStopBefore | (1 << collision.gameObject.layer)))
+        {
             counter--;
+        }
     }
 
     // Update is called once per frame
