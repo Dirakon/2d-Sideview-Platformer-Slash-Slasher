@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterScript : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class CharacterScript : MonoBehaviour
         attackEffect.myBoss = gameObject;
         prevLayer = LayerMask.LayerToName(gameObject.layer);
     }
-
+    public bool restartOnDeath = false; //maaaaan...
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.GetComponent<Unclimable>() != null)
@@ -30,8 +31,6 @@ public class CharacterScript : MonoBehaviour
     public float JumpReloadTime;
     float jumpReload = 0;
     Vector2[] normals = new Vector2[] { Vector2.up };
-
-
 
     public void RotateTowards(Vector2 coords)
     {
@@ -69,6 +68,7 @@ public class CharacterScript : MonoBehaviour
         if (angle > -90 && angle < 90)
         {
             thingRotator.transform.localScale = new Vector3(1, 1, 1);
+            realBody.transform.localScale = new Vector3(Mathf.Abs(realBody.transform.localScale.x), realBody.transform.localScale.y, realBody.transform.localScale.z);
         }
         else
         {
@@ -84,6 +84,7 @@ public class CharacterScript : MonoBehaviour
                 angle = -angle;
             }
             thingRotator.transform.localScale = new Vector3(-1, 1, 1);
+            realBody.transform.localScale = new Vector3(-Mathf.Abs(realBody.transform.localScale.x), realBody.transform.localScale.y, realBody.transform.localScale.z);
         }
         if (angle > 42)
             angle = 42;
@@ -132,6 +133,7 @@ public class CharacterScript : MonoBehaviour
             dashIsAvaliable = true;
         }
     }
+    public GameObject realBody;
     public void DashOn()
     {
         StartCoroutine(dash(dashDuration,dashKD));
@@ -251,7 +253,15 @@ public class CharacterScript : MonoBehaviour
     {
         if (hp <= 0)
         {
-            Destroy(gameObject);
+            if (restartOnDeath)
+            {
+                GoToScene.timesOnThatScene++;
+                SceneManager.LoadScene(GoToScene.sceneNow);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         if (jumpReload > 0)
             jumpReload -= Time.deltaTime;
