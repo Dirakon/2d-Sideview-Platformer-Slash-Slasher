@@ -15,7 +15,6 @@ public class Enemy : MonoBehaviour
     bool reachedEnd = false;
     Seeker seeker;
     float toGetRidOf;
-
     void OnPathComplete(Path p)
     {
         if (!p.error)

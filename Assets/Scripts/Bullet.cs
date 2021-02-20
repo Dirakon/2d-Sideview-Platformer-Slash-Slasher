@@ -12,6 +12,7 @@ public class Bullet : MonoBehaviour
     {
         
     }
+    public AudioSource audi;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         var character = collision.gameObject.GetComponent<CharacterScript>();

@@ -16,6 +16,7 @@ public class GoToScene : MonoBehaviour
     public static int timesOnThatScene = 0;
     void clicked()
     {
+        CharacterScript.curentlyAlive = 0;
         timesOnThatScene = 0;
         sceneNow = "SampleScene";
         SceneManager.LoadScene("SampleScene");

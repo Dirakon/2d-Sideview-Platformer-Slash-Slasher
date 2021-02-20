@@ -11,12 +11,14 @@ public class AttackZone : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         sr.enabled = false;
     }
-
+    public AudioSource audi;
+    public AudioClip clip;
     List<CharacterScript> chars = new List<CharacterScript>();
     List<int> idsAttacked = null;
     public float dmg = 0;
     public void BeginAttack(float dmg)
     {
+        audi.Play();
         this.dmg = dmg;
         sr.enabled = true;
         idsAttacked = new List<int>();
@@ -52,7 +54,8 @@ public class AttackZone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        audi.clip = clip;
+        
     }
 
     // Update is called once per frame

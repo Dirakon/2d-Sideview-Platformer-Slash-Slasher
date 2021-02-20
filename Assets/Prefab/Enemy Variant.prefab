@@ -123,6 +123,67 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4221779495101027096, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960435934534707532, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960435934534707532, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7960435934534707532, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 6599714021832838827, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103213657682106926, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3212913230953254482, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237125413557398433, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571836688194396792, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7668241645034606465, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968780959515542089, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9169391318441710838, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ca00c49195a235348a74ca23d3f0821c,
+        type: 3}
     - target: {fileID: 4190767046389278197, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: moveSpeed
@@ -158,36 +219,16 @@ PrefabInstance:
       propertyPath: bulletLifetime
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 6103213657682106926, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+    - target: {fileID: 4190767046389278197, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 4221779495101027096, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+      propertyPath: meleeAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 163d3fb58bd3ab24582efd76106ca745, type: 3}
+    - target: {fileID: 4190767046389278197, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6599714021832838827, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212913230953254482, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7668241645034606465, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8968780959515542089, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
+      propertyPath: rangedAttack
+      value: 
+      objectReference: {fileID: 8300000, guid: 5d7cf916cf6023440b0950105b9d7e1a, type: 3}
     - target: {fileID: 2115738247218007580, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: whoToStopBefore.m_Bits

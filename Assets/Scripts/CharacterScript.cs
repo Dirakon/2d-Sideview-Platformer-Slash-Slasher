@@ -8,6 +8,7 @@ public class CharacterScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        curentlyAlive++;
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -15,6 +16,7 @@ public class CharacterScript : MonoBehaviour
     {
         hp = maxHp;
         attackEffect.myBoss = gameObject;
+        attackEffect.clip = meleeAttack;
         prevLayer = LayerMask.LayerToName(gameObject.layer);
     }
     public bool restartOnDeath = false; //maaaaan...
@@ -164,6 +166,8 @@ public class CharacterScript : MonoBehaviour
             it.runTime = bulletLifetime;
             it.myLayer = gameObject.layer;
             it.myDmg = rangedDamage;
+            it.audi.clip = rangedAttack;
+            it.audi.Play();
             Vector2 mov = pos;
             mov.x = mov.x - transform.position.x;
             mov.y = mov.y - transform.position.y;
@@ -248,6 +252,8 @@ public class CharacterScript : MonoBehaviour
         }
     }
 
+    public static int curentlyAlive = 0;
+    public AudioClip meleeAttack, rangedAttack;
     // Update is called once per frame
     void Update()
     {
@@ -255,11 +261,20 @@ public class CharacterScript : MonoBehaviour
         {
             if (restartOnDeath)
             {
+                curentlyAlive = 0;
                 GoToScene.timesOnThatScene++;
                 SceneManager.LoadScene(GoToScene.sceneNow);
             }
             else
             {
+                curentlyAlive--;
+                if (GoToScene.sceneNow == "BossScene")
+                {
+                    curentlyAlive = 0;
+                    GoToScene.sceneNow = "Win";
+                    GoToScene.timesOnThatScene=0;
+                    SceneManager.LoadScene("Win");
+                }
                 Destroy(gameObject);
             }
         }

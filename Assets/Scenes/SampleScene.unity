@@ -37,8 +37,8 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -129,7 +129,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 111726612}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bg (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -143,8 +143,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 111726611}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.5, y: 2.4, z: 230.76}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 222.47545, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1864740326}
@@ -156,8 +156,8 @@ Transform:
   - {fileID: 1854263978}
   - {fileID: 502616462}
   - {fileID: 1946737609}
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_Father: {fileID: 285152815}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &194948279
 GameObject:
@@ -169,7 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 194948280}
   - component: {fileID: 194948281}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -248,7 +248,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213087660}
   - component: {fileID: 213087661}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Tree B (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -327,7 +327,7 @@ GameObject:
   m_Component:
   - component: {fileID: 247590837}
   - component: {fileID: 247590838}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Tree B (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -405,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 285152815}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,6 +423,8 @@ Transform:
   m_LocalPosition: {x: -239.97545, y: 2.4, z: 230.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 921136728}
+  - {fileID: 111726612}
   - {fileID: 579244486}
   - {fileID: 1129802085}
   - {fileID: 1248911234}
@@ -438,8 +440,9 @@ Transform:
   - {fileID: 736463783}
   - {fileID: 2095681236}
   - {fileID: 1482929697}
+  - {fileID: 1404833856}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383283999
 GameObject:
@@ -451,7 +454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 383284000}
   - component: {fileID: 383284001}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Hay Pile (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -633,10 +636,132 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 83.8, y: 2.8, z: 6.48}
   m_LocalScale: {x: 512.07, y: 30.7, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 660652064}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!1 &396259751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 396259755}
+  - component: {fileID: 396259754}
+  - component: {fileID: 396259753}
+  - component: {fileID: 396259752}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &396259752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396259751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 396259753}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &396259753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396259751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &396259754
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396259751}
+  m_CullTransparentMesh: 0
+--- !u!224 &396259755
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396259751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2138938432}
+  m_Father: {fileID: 821634830}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1384}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &410130218
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +846,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.91482615, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &443408627
 GameObject:
@@ -812,7 +937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502616462}
   - component: {fileID: 502616463}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +1016,7 @@ GameObject:
   m_Component:
   - component: {fileID: 509509509}
   - component: {fileID: 509509510}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -910,7 +1035,7 @@ Transform:
   m_LocalScale: {x: 3.47, y: 3.47, z: 3.47}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &509509510
 SpriteRenderer:
@@ -970,7 +1095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 513748529}
   - component: {fileID: 513748530}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Archert Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -989,7 +1114,7 @@ Transform:
   m_LocalScale: {x: 3.409, y: 3.409, z: 3.409}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 11
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &513748530
 SpriteRenderer:
@@ -1039,6 +1164,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &575833829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575833832}
+  - component: {fileID: 575833831}
+  - component: {fileID: 575833830}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &575833830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575833829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &575833831
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575833829}
+  m_CullTransparentMesh: 0
+--- !u!224 &575833832
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575833829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 821634830}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 1060}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &579244485
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,7 +1253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 579244486}
   - component: {fileID: 579244487}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Arrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1068,7 +1272,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &579244487
 SpriteRenderer:
@@ -1196,7 +1400,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &605447017
 BoxCollider2D:
@@ -1224,6 +1428,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.23}
   m_EdgeRadius: 4.45
+--- !u!20 &627318600 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1164433216, guid: 9a2a65d31bf7931479276775474bb7d1,
+    type: 3}
+  m_PrefabInstance: {fileID: 912005282298345259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &635629675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 635629676}
   - component: {fileID: 635629677}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1303,6 +1513,126 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &660652063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660652064}
+  - component: {fileID: 660652066}
+  - component: {fileID: 660652065}
+  - component: {fileID: 660652067}
+  m_Layer: 2
+  m_Name: New Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &660652064
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660652063}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.531, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 385216013}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &660652065
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660652063}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.64, y: 0.64}
+    newSize: {x: 0.64, y: 0.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.64, y: 0.64}
+  m_EdgeRadius: 0
+--- !u!212 &660652066
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660652063}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 80b82f84265a7994fbf0bca5e9a5f116, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!114 &660652067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660652063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 843e80468ad5ebd4796fbbe5df263963, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextScene: SecondLevel
 --- !u!1 &664061877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1407,7 +1737,7 @@ Transform:
   m_LocalScale: {x: 11.23, y: 22.1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &686804845
 GameObject:
@@ -1473,7 +1803,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &694176037
 GameObject:
@@ -1485,7 +1815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 694176038}
   - component: {fileID: 694176039}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1504,7 +1834,7 @@ Transform:
   m_LocalScale: {x: 3.47, y: 3.4977598, z: 3.47}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &694176039
 SpriteRenderer:
@@ -1554,97 +1884,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &705507993
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 705507995}
-  - component: {fileID: 705507994}
-  m_Layer: 0
-  m_Name: Directional Light
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!108 &705507994
-Light:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705507993}
-  m_Enabled: 1
-  serializedVersion: 9
-  m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
-  m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
-  m_Shadows:
-    m_Type: 2
-    m_Resolution: -1
-    m_CustomResolution: -1
-    m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
-    m_CullingMatrixOverride:
-      e00: 1
-      e01: 0
-      e02: 0
-      e03: 0
-      e10: 0
-      e11: 1
-      e12: 0
-      e13: 0
-      e20: 0
-      e21: 0
-      e22: 1
-      e23: 0
-      e30: 0
-      e31: 0
-      e32: 0
-      e33: 1
-    m_UseCullingMatrixOverride: 0
-  m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
-  m_Flare: {fileID: 0}
-  m_RenderMode: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingLayerMask: 1
-  m_Lightmapping: 1
-  m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
-  m_BounceIntensity: 1
-  m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 3.0222225e+32, y: 1.68e-43, z: 1e-45, w: 6.9e-44}
-  m_UseBoundingSphereOverride: 0
-  m_ShadowRadius: 0
-  m_ShadowAngle: 0
---- !u!4 &705507995
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &709642343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,7 +1894,7 @@ GameObject:
   m_Component:
   - component: {fileID: 709642344}
   - component: {fileID: 709642345}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1734,7 +1973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 736463783}
   - component: {fileID: 736463784}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Well
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1753,7 +1992,7 @@ Transform:
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 12
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &736463784
 SpriteRenderer:
@@ -1815,7 +2054,7 @@ GameObject:
   - component: {fileID: 778449676}
   - component: {fileID: 778449675}
   - component: {fileID: 778449674}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1904,6 +2143,106 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &821634826
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 821634830}
+  - component: {fileID: 821634829}
+  - component: {fileID: 821634828}
+  - component: {fileID: 821634827}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &821634827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821634826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &821634828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821634826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+--- !u!223 &821634829
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821634826}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 1
+  m_Camera: {fileID: 627318600}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &821634830
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 821634826}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 396259755}
+  - {fileID: 575833832}
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &858071393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1914,7 +2253,7 @@ GameObject:
   m_Component:
   - component: {fileID: 858071394}
   - component: {fileID: 858071395}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Gunny Bag B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1993,7 +2332,7 @@ GameObject:
   m_Component:
   - component: {fileID: 917018452}
   - component: {fileID: 917018453}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2072,7 +2411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 921136728}
   - component: {fileID: 921136727}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2135,11 +2474,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 921136726}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -47.1, y: 8.2, z: 258.16}
+  m_LocalPosition: {x: 192.87546, y: 5.7999997, z: 27.40001}
   m_LocalScale: {x: 3.47, y: 3.4977598, z: 3.47}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 285152815}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &927921979
 GameObject:
@@ -2151,7 +2490,7 @@ GameObject:
   m_Component:
   - component: {fileID: 927921980}
   - component: {fileID: 927921981}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2230,7 +2569,7 @@ GameObject:
   m_Component:
   - component: {fileID: 933252020}
   - component: {fileID: 933252021}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2249,7 +2588,7 @@ Transform:
   m_LocalScale: {x: 3.47, y: 3.47, z: 3.47}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &933252021
 SpriteRenderer:
@@ -2309,7 +2648,7 @@ GameObject:
   m_Component:
   - component: {fileID: 942090279}
   - component: {fileID: 942090280}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,7 +2727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957305285}
   - component: {fileID: 957305286}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2407,7 +2746,7 @@ Transform:
   m_LocalScale: {x: 3.47, y: 3.47, z: 3.47}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &957305286
 SpriteRenderer:
@@ -2468,7 +2807,7 @@ GameObject:
   - component: {fileID: 975307724}
   - component: {fileID: 975307726}
   - component: {fileID: 975307725}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2547,7 +2886,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1008558306}
   - component: {fileID: 1008558307}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Hay Pile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2626,7 +2965,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1039731139}
   - component: {fileID: 1039731140}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2645,7 +2984,7 @@ Transform:
   m_LocalScale: {x: 3.47, y: 3.47, z: 3.47}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1039731140
 SpriteRenderer:
@@ -2705,7 +3044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1055527638}
   - component: {fileID: 1055527639}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Hay Fork
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2790,7 +3129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129802085}
   - component: {fileID: 1129802086}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2809,7 +3148,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1129802086
 SpriteRenderer:
@@ -2869,7 +3208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1130697559}
   - component: {fileID: 1130697560}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2888,7 +3227,7 @@ Transform:
   m_LocalScale: {x: 3.47, y: 3.4977598, z: 3.47}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 8
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1130697560
 SpriteRenderer:
@@ -2947,7 +3286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1185097759}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: fb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2980,7 +3319,7 @@ Transform:
   - {fileID: 213087660}
   - {fileID: 778449673}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1199802544
 GameObject:
@@ -2992,7 +3331,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1199802545}
   - component: {fileID: 1199802546}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Hay Pile (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3071,7 +3410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248000354}
   - component: {fileID: 1248000355}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3150,7 +3489,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1248911234}
   - component: {fileID: 1248911235}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3169,7 +3508,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1248911235
 SpriteRenderer:
@@ -3235,7 +3574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1283156661}
   - component: {fileID: 1283156662}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Tree B
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3354,7 +3693,7 @@ PrefabInstance:
     - target: {fileID: 1662968801995554391, guid: ee2a43856a01ecb4584eb3d8219ef9bb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1662968801995554391, guid: ee2a43856a01ecb4584eb3d8219ef9bb,
         type: 3}
@@ -3391,7 +3730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1317207131}
   - component: {fileID: 1317207132}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3470,7 +3809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1367042733}
   - component: {fileID: 1367042734}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3548,7 +3887,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1404833856}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bg (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3562,8 +3901,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404833855}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 208, y: 2.4, z: 230.76}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 447.97546, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 709642344}
@@ -3578,8 +3917,8 @@ Transform:
   - {fileID: 1714895344}
   - {fileID: 1367042733}
   - {fileID: 1918274761}
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_Father: {fileID: 285152815}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438622331
 GameObject:
@@ -3591,7 +3930,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1438622332}
   - component: {fileID: 1438622333}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3610,7 +3949,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1438622333
 SpriteRenderer:
@@ -3670,7 +4009,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1482929697}
   - component: {fileID: 1482929698}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: New Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3689,7 +4028,7 @@ Transform:
   m_LocalScale: {x: 182.89339, y: 50.6783, z: 1}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1482929698
 SpriteRenderer:
@@ -3794,7 +4133,7 @@ PrefabInstance:
     - target: {fileID: 8883002531128381806, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8883002531128381806, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
@@ -3811,25 +4150,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1237125413557398433, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+    - target: {fileID: 7311625658701811345, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
+      propertyPath: m_LocalPosition.y
+      value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7571836688194396792, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6103213657682106926, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+    - target: {fileID: 4221779495101027096, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: m_Layer
-      value: 13
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4000707979640014247, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: m_Mass
       value: 598.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127419154691190714, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127419154691190714, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 6.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1127419154691190714, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 29.92
       objectReference: {fileID: 0}
     - target: {fileID: 7960435934534707532, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
@@ -3856,37 +4205,42 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 7.02
       objectReference: {fileID: 0}
-    - target: {fileID: 1127419154691190714, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127419154691190714, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Size.x
-      value: 6.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1127419154691190714, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 29.92
-      objectReference: {fileID: 0}
-    - target: {fileID: 4221779495101027096, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6599714021832838827, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: m_Layer
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6103213657682106926, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3212913230953254482, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1288383210058046438, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1237125413557398433, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7571836688194396792, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7668241645034606465, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8968780959515542089, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: m_Layer
       value: 13
@@ -3902,21 +4256,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8968780959515542089, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 1288383210058046438, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_Layer
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 7311625658701811345, guid: 742d4f43150ed4449ba05aaee87ed1d7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 742d4f43150ed4449ba05aaee87ed1d7, type: 3}
 --- !u!1 &1518021695
@@ -3929,7 +4268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1518021696}
   - component: {fileID: 1518021697}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4105,7 +4444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1622728160}
   - component: {fileID: 1622728161}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Tree B (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4184,7 +4523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1694772173}
   - component: {fileID: 1694772174}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Log Bench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4263,7 +4602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714895344}
   - component: {fileID: 1714895345}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4342,7 +4681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717301243}
   - component: {fileID: 1717301244}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4526,7 +4865,7 @@ Transform:
   m_LocalScale: {x: 512.07, y: 30.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1 &1733993588
 GameObject:
@@ -4538,7 +4877,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1733993589}
   - component: {fileID: 1733993590}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4617,7 +4956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1775212225}
   - component: {fileID: 1775212226}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Tree B (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4697,7 +5036,7 @@ GameObject:
   - component: {fileID: 1817225593}
   - component: {fileID: 1817225595}
   - component: {fileID: 1817225594}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4776,7 +5115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1831950438}
   - component: {fileID: 1831950439}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4855,7 +5194,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1854263978}
   - component: {fileID: 1854263979}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4934,7 +5273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864740326}
   - component: {fileID: 1864740327}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5013,7 +5352,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1918274761}
   - component: {fileID: 1918274762}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5092,7 +5431,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1946737609}
   - component: {fileID: 1946737610}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5171,7 +5510,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2046526980}
   - component: {fileID: 2046526981}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Hay Pile (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5250,7 +5589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2070876820}
   - component: {fileID: 2070876821}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TX Village Props Hay Pile (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5330,7 +5669,7 @@ GameObject:
   - component: {fileID: 2072064041}
   - component: {fileID: 2072064043}
   - component: {fileID: 2072064042}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5409,7 +5748,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2094998808}
   - component: {fileID: 2094998809}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5488,7 +5827,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2095681236}
   - component: {fileID: 2095681237}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5507,7 +5846,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2095681237
 SpriteRenderer:
@@ -5567,7 +5906,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2104737415}
   - component: {fileID: 2104737416}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5646,7 +5985,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2118655415}
   - component: {fileID: 2118655416}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: bgrd_tree4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5665,7 +6004,7 @@ Transform:
   m_LocalScale: {x: 3.47, y: 3.47, z: 3.47}
   m_Children: []
   m_Father: {fileID: 285152815}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2118655416
 SpriteRenderer:
@@ -5715,6 +6054,85 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2138938431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2138938432}
+  - component: {fileID: 2138938434}
+  - component: {fileID: 2138938433}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2138938432
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138938431}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 396259755}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2138938433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138938431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Button
+--- !u!222 &2138938434
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138938431}
+  m_CullTransparentMesh: 0
 --- !u!1001 &912005282298345259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5722,6 +6140,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7023434846344138140, guid: 9a2a65d31bf7931479276775474bb7d1,
+        type: 3}
+      propertyPath: BGMusic
+      value: 
+      objectReference: {fileID: 4862952719692621136, guid: db92472be08aea4459bda8230a93ba55,
+        type: 3}
     - target: {fileID: 6715549906200911798, guid: 9a2a65d31bf7931479276775474bb7d1,
         type: 3}
       propertyPath: m_Name
@@ -5765,7 +6189,7 @@ PrefabInstance:
     - target: {fileID: 5949756956692553344, guid: 9a2a65d31bf7931479276775474bb7d1,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5949756956692553344, guid: 9a2a65d31bf7931479276775474bb7d1,
         type: 3}
@@ -5782,6 +6206,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3472664772259198610, guid: 9a2a65d31bf7931479276775474bb7d1,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1164433216, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: orthographic size
+      value: 27.59
+      objectReference: {fileID: 0}
     - target: {fileID: 2770398141072728148, guid: 9a2a65d31bf7931479276775474bb7d1,
         type: 3}
       propertyPath: m_Material
@@ -5792,22 +6225,42 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.38
       objectReference: {fileID: 0}
-    - target: {fileID: 1164433216, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
-      propertyPath: orthographic size
-      value: 27.59
-      objectReference: {fileID: 0}
     - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
       propertyPath: startSize
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
       propertyPath: increaseSpeed
-      value: 1
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
       propertyPath: doMonologue
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: in1
+      value: 
+      objectReference: {fileID: 8300000, guid: de50fc02ac801404892eee425dd11939, type: 3}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: diaMessage
+      value: 
+      objectReference: {fileID: 575833830}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: b1
+      value: 
+      objectReference: {fileID: 396259752}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: b2
+      value: 
+      objectReference: {fileID: 396259752}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: textCanvas
+      value: 
+      objectReference: {fileID: 821634829}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: out1
+      value: 
+      objectReference: {fileID: 8300000, guid: de50fc02ac801404892eee425dd11939, type: 3}
     - target: {fileID: 4620297453563102387, guid: 9a2a65d31bf7931479276775474bb7d1,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -5865,7 +6318,7 @@ PrefabInstance:
     - target: {fileID: 6751366922500792858, guid: 1062e92bf4eb19444b6b3b1650cb5812,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6751366922500792858, guid: 1062e92bf4eb19444b6b3b1650cb5812,
         type: 3}
@@ -5934,7 +6387,7 @@ PrefabInstance:
     - target: {fileID: 1662968801995554391, guid: ee2a43856a01ecb4584eb3d8219ef9bb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1662968801995554391, guid: ee2a43856a01ecb4584eb3d8219ef9bb,
         type: 3}
