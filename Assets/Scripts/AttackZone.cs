@@ -5,11 +5,14 @@ using UnityEngine;
 public class AttackZone : MonoBehaviour
 {
     public GameObject myBoss;
-    public SpriteRenderer sr;
+    public SpriteRenderer[] srs;
     private void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
-        sr.enabled = false;
+        //  sr = GetComponent<SpriteRenderer>();
+        foreach (var sr in srs)
+        {
+            sr.enabled = false;
+        }
     }
     public AudioSource audi;
     public AudioClip clip;
@@ -20,12 +23,14 @@ public class AttackZone : MonoBehaviour
     {
         audi.Play();
         this.dmg = dmg;
-        sr.enabled = true;
+        foreach (var sr in srs)
+            sr.enabled = true;
         idsAttacked = new List<int>();
     }
     public void EndAttack()
     {
-        sr.enabled = false;
+        foreach (var sr in srs)
+            sr.enabled = false;
         foreach (var p in chars)
         {
             if (p == null)
@@ -55,7 +60,7 @@ public class AttackZone : MonoBehaviour
     void Start()
     {
         audi.clip = clip;
-        
+
     }
 
     // Update is called once per frame

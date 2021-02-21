@@ -104,9 +104,7 @@ public class CharacterScript : MonoBehaviour
         {
             attackEffect.BeginAttack(meleeDamage);
             attackGoing = true;
-            what.color = Color.red;
             yield return new WaitForSeconds(whatTime);
-            what.color = Color.white;
             attackEffect.EndAttack();
             yield return new WaitForSeconds(kd);
             attackGoing = false;
@@ -144,7 +142,7 @@ public class CharacterScript : MonoBehaviour
     public static int ider = -1;
     public int id = ider++;
     public float maxHp = 100;
-    float hp;
+    public float hp;
     public float meleeDamage = 50f;
     public float rangedDamage = 50f;
     public bool getHurt(float dmg)

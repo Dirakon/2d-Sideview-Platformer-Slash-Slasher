@@ -53,6 +53,7 @@ public class dialogTrigger : MonoBehaviour
                 Debug.Log("KIL!");
                 parent.GetComponent<BoxCollider2D>().isTrigger = true;
                 Player.singleton.StartCoroutine(ignoreInDueTime());
+                Player.singleton.startSize = Player.singleton.endSize; 
                 Destroy(gameObject);
             }
         }

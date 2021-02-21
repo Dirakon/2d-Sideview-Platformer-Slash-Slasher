@@ -13,7 +13,7 @@ public class GoToScene : MonoBehaviour
         gameObject.GetComponent<Button>().onClick.AddListener(clicked);
     }
     public static string sceneNow = "SampleScene";
-    public static int timesOnThatScene = 0;
+    public static int timesOnThatScene = 1;
     void clicked()
     {
         CharacterScript.curentlyAlive = 0;

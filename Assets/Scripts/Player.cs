@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     public AudioSource audi;
     public AudioClip in1, out1;
+    static public float maxHp = 100f;
     void Awake()
     {
         singleton = this;
@@ -30,6 +31,12 @@ public class Player : MonoBehaviour
         }
         character.restartOnDeath = true;
     }
+    public void Start()
+    {
+        character.maxHp = maxHp;
+        character.hp = maxHp;
+    }
+
     public void IWon()
     {
 
@@ -37,6 +44,7 @@ public class Player : MonoBehaviour
     // public ScreenFader.FadeState whatToDo;
     public Button b1, b2;
     public Text diaMessage;
+    public bool dialogIsOver = false;
     public void DoDialog(string[] txt)
     {
         StartCoroutine(dialogCoroutine(txt));
@@ -96,6 +104,7 @@ public class Player : MonoBehaviour
         controllable++;
         yield return closeInCam(endSize, startSize, 12f);
         sr.enabled = true;
+        textCanvas.enabled = true;
         textCanvas.planeDistance = 100;
         foreach (string p in txt)
         {
@@ -119,7 +128,7 @@ public class Player : MonoBehaviour
         yield return closeOutCam(startSize, endSize, 12f);
 
 
-
+        dialogIsOver = true;
         controllable--;
     }
 
@@ -141,6 +150,7 @@ public class Player : MonoBehaviour
         else
             yield return closeInCam(endSize, startSize, 24f);
         sr.enabled = true;
+        textCanvas.enabled = true;
         textCanvas.planeDistance = 100;
         foreach (string p in txt)
         {
