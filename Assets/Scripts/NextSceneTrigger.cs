@@ -38,8 +38,9 @@ public class NextSceneTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (CharacterScript.curentlyAlive < 2)
+        if (CharacterScript.curentlyAlive < 2)  // For now, hardcoded activation only when you're the last survivor
         {
+            // And just two dialogs with hardcoded events happening (not great, I know; that was a hackathon game after all)
             if (dialogBeforeThat)
             {
                 Player.singleton.dialogIsOver = false;

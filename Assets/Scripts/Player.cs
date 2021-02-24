@@ -37,10 +37,6 @@ public class Player : MonoBehaviour
         character.hp = maxHp;
     }
 
-    public void IWon()
-    {
-
-    }
     // public ScreenFader.FadeState whatToDo;
     public Button b1, b2;
     public Text diaMessage;
@@ -56,6 +52,7 @@ public class Player : MonoBehaviour
         {
             audi.clip = out1;
             audi.Play();
+            out1 = null;
         }
         controllable++;
         cam.orthographicSize = start;
@@ -76,10 +73,9 @@ public class Player : MonoBehaviour
     {
         if (in1 != null && GoToScene.timesOnThatScene == 0)
         {
-            Debug.LogError("here");
             audi.clip = in1;
             audi.Play();
-            Debug.LogError("here2");
+            in1 = null;
         }
         controllable++;
 
@@ -99,21 +95,29 @@ public class Player : MonoBehaviour
     public Canvas textCanvas;
     float controllable = 0;
     public int decesion = -1;
+    public float dialogClosingInSpeedUnspeeded = 12f, dialogClosingOutSpeedUnspeeded = 12f;
+    public float dialogClosingInSpeedSpeeded = 12f, dialogClosingOutSpeedSpeeded = 12f;
     IEnumerator dialogCoroutine(string[] txt)
     {
         controllable++;
-        yield return closeInCam(endSize, startSize, 12f);
+        if (GoToScene.timesOnThatScene == 0)
+            yield return closeInCam(endSize, startSize, dialogClosingInSpeedUnspeeded);
+        else
+            yield return closeInCam(endSize, startSize, dialogClosingInSpeedSpeeded);
         sr.enabled = true;
         textCanvas.enabled = true;
         textCanvas.planeDistance = 100;
+        spaceClicked = false;
         foreach (string p in txt)
         {
             diaMessage.text = p;
             while (true)
             {
-                Debug.Log(Input.GetKeyDown(KeyCode.Space));
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (spaceClicked)
+                {
+                    spaceClicked = false;
                     break;
+                }
                 yield return new WaitForFixedUpdate();
             }
             yield return new WaitForEndOfFrame();
@@ -125,7 +129,10 @@ public class Player : MonoBehaviour
 
         textCanvas.enabled = false;
         sr.enabled = false;
-        yield return closeOutCam(startSize, endSize, 12f);
+        if (GoToScene.timesOnThatScene == 0)
+            yield return closeOutCam(endSize, startSize, dialogClosingOutSpeedUnspeeded);
+        else
+            yield return closeOutCam(endSize, startSize, dialogClosingOutSpeedSpeeded);
 
 
         dialogIsOver = true;
@@ -142,13 +149,15 @@ public class Player : MonoBehaviour
     }
     // public ScreenFader screenFader;
 
+    public float choiceClosingInSpeedUnspeeded = 2f, choiceClosingOutSpeedUnspeeded = 24f;
+    public float choiceClosingInSpeedSpeeded = 24f, choiceClosingOutSpeedSpeeded = 24f;
     IEnumerator choiceCoroutine(string[] txt, string ch1, string ch2)
     {
         controllable++;
         if (GoToScene.timesOnThatScene == 0)
-            yield return closeInCam(endSize, startSize, 2f);
+            yield return closeInCam(endSize, startSize, choiceClosingInSpeedUnspeeded);
         else
-            yield return closeInCam(endSize, startSize, 24f);
+            yield return closeInCam(endSize, startSize, choiceClosingInSpeedSpeeded);
         sr.enabled = true;
         textCanvas.enabled = true;
         textCanvas.planeDistance = 100;
@@ -189,7 +198,10 @@ public class Player : MonoBehaviour
         sr.enabled = false;
         textCanvas.planeDistance = -100;
         textCanvas.enabled = false;
-        yield return closeOutCam(startSize, endSize, 24f);
+        if (GoToScene.timesOnThatScene == 0)
+            yield return closeOutCam(startSize, endSize, choiceClosingOutSpeedUnspeeded);
+        if (GoToScene.timesOnThatScene == 0)
+            yield return closeOutCam(startSize, endSize, choiceClosingOutSpeedSpeeded);
 
 
 
@@ -209,6 +221,25 @@ public class Player : MonoBehaviour
     public float increaseSpeed = 1f;
     public CharacterScript character;
     Camera cam;
+    private void Update()
+    {
+
+        if (Input.GetMouseButtonDown(0) && controllable == 0)
+        {
+            leftMouse = true;
+        }
+        if (Input.GetMouseButtonDown(1) && controllable ==0)
+        {
+            rightMouse = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            spaceClicked = true;
+        }
+    }
+    public bool spaceClicked = false;
+    public bool leftMouse = false, rightMouse = false;
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -225,15 +256,17 @@ public class Player : MonoBehaviour
             character.DashOn();
         }
         character.Fall(Input.GetKey(KeyCode.S));
-        if (Input.GetMouseButtonDown(0))
+        if (leftMouse)
         {
+            leftMouse = false;
             Debug.Log("BUTTON");
             character.Attack();
         }
-        if (Input.GetMouseButtonDown(1))
+        if (rightMouse)
         {
+            rightMouse = false;
             Debug.Log("BUTTON");
-            character.CoolAttack(mouseCoords);
+            character.RangedAttack(mouseCoords);
         }
         character.RotateTowards(mouseCoords);
     }

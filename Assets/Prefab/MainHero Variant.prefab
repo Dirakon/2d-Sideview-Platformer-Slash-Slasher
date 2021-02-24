@@ -104,6 +104,7 @@ MonoBehaviour:
   b1: {fileID: 0}
   b2: {fileID: 0}
   diaMessage: {fileID: 0}
+  dialogIsOver: 0
   textCanvas: {fileID: 0}
   decesion: -1
   sr: {fileID: 0}
@@ -112,6 +113,9 @@ MonoBehaviour:
   endSize: 27.59
   increaseSpeed: 1
   character: {fileID: 1441032849920502299}
+  spaceClicked: 0
+  leftMouse: 0
+  rightMouse: 0
 --- !u!82 &3472664772259198610
 AudioSource:
   m_ObjectHideFlags: 0
@@ -345,6 +349,12 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 9169391318441710838, guid: 742d4f43150ed4449ba05aaee87ed1d7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3233e579c584f1549882019ec8ad9829,
+        type: 3}
     - target: {fileID: 4190767046389278197, guid: 742d4f43150ed4449ba05aaee87ed1d7,
         type: 3}
       propertyPath: selectedItems.Array.size

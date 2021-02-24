@@ -16,7 +16,7 @@ public class CharacterScript : MonoBehaviour
     {
         hp = maxHp;
         attackEffect.myBoss = gameObject;
-        attackEffect.clip = meleeAttack;
+        attackEffect.clip = meleeAttackSound;
         prevLayer = LayerMask.LayerToName(gameObject.layer);
     }
     public bool restartOnDeath = false; //maaaaan...
@@ -37,9 +37,9 @@ public class CharacterScript : MonoBehaviour
     public void RotateTowards(Vector2 coords)
     {
 
-        // thingRotator.transform.LookAt(new Vector3(coords.x, coords.y, thingRotator.transform.position.z));
-        coords.x = coords.x - thingRotator.transform.position.x;
-        coords.y = coords.y - thingRotator.transform.position.y;
+
+        coords.x -= thingRotator.transform.position.x;
+        coords.y -= thingRotator.transform.position.y;
 
         float angle = Mathf.Atan2(coords.y, coords.x) * Mathf.Rad2Deg;
         if (angle < -135 || angle > 142)
@@ -50,9 +50,6 @@ public class CharacterScript : MonoBehaviour
                 float rem = spriteR.transform.localEulerAngles.z;
                 if (rem > 180)
                     rem -= 360;
-           //     Debug.Log(spriteR.transform.localEulerAngles.z);
-               // spriteR.flipX = true;
-            //    spriteR.transform.localEulerAngles = new Vector3(spriteR.transform.localEulerAngles.x, spriteR.transform.localEulerAngles.y, -Mathf.Abs(rem));
             }
         }
         else if (angle < 42 && angle > -35)
@@ -63,8 +60,6 @@ public class CharacterScript : MonoBehaviour
                 float rem = spriteR.transform.localEulerAngles.z;
                 if (rem > 180)
                     rem -= 360;
-              //  spriteR.flipX = false;
-             //   spriteR.transform.localEulerAngles = new Vector3(spriteR.transform.localEulerAngles.x, spriteR.transform.localEulerAngles.y, Mathf.Abs(rem));
             }
         }
         if (angle > -90 && angle < 90)
@@ -74,7 +69,6 @@ public class CharacterScript : MonoBehaviour
         }
         else
         {
-           // Debug.Log(angle);
             if (angle < -90)
             {
                 angle = -180 - angle;
@@ -93,9 +87,6 @@ public class CharacterScript : MonoBehaviour
         if (angle < -42)
             angle = -42;
         thingRotator.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
-        // thingRotator.transform.LookAt(coords, Vector3.right);
-        // thingRotator.transform.eulerAngles = new Vector3(0, 0, thingRotator.transform.eulerAngles.z);
-        // Debug.Log(coords);
     }
 
     IEnumerator hideAndRehideInTime(float whatTime,float kd, SpriteRenderer what)
@@ -125,11 +116,14 @@ public class CharacterScript : MonoBehaviour
             rb.gravityScale = 0;
             dashSide = -1029;
             dashIsOn = true;
-            //  what.color = Color.white;
+
             yield return new WaitForSeconds(duration);
+
             dashIsOn = false;
             rb.gravityScale = prev;
+
             yield return new WaitForSeconds(kd);
+
             dashIsAvaliable = true;
         }
     }
@@ -155,55 +149,51 @@ public class CharacterScript : MonoBehaviour
         hpBar.transform.localScale = new Vector3(hp/maxHp,1, 1);
         return false;
     }
-    IEnumerator coolAttack(float kd,Vector2 pos)
+    IEnumerator rangedAttack(float kd,Vector2 pos)
     {
-        if (!coolAttackGoing)
+        if (!rangedAttackGoing)
         {
-            coolAttackGoing = true;
+            rangedAttackGoing = true;
             var it = Instantiate(bulletPrefab, selectedItems[0].transform.position, Quaternion.identity).GetComponent<Bullet>();
             it.runTime = bulletLifetime;
             it.myLayer = gameObject.layer;
             it.myDmg = rangedDamage;
-            it.audi.clip = rangedAttack;
+            it.audi.clip = rangedAttackSound;
             it.audi.Play();
             Vector2 mov = pos;
-            mov.x = mov.x - transform.position.x;
-            mov.y = mov.y - transform.position.y;
+            mov.x -= transform.position.x;
+            mov.y -= transform.position.y;
             it.rb.velocity = mov.normalized * bulletStrenght;
-            //  what.color = Color.white;
+
             yield return new WaitForSeconds(kd);
-            coolAttackGoing = false;
+
+            rangedAttackGoing = false;
         }
     }
     public AttackZone attackEffect;
     bool attackGoing = false;
-    bool coolAttackGoing = false;
+    bool rangedAttackGoing = false;
     public GameObject bulletPrefab;
     public float meleeKD=1f;
     public void Attack()
     {
-        StartCoroutine(hideAndRehideInTime( duration,meleeKD, selectedItems[0]));
+        StartCoroutine(hideAndRehideInTime(meleeAttackDuration, meleeKD, selectedItems[0]));
     }
-    public void CoolAttack(Vector2 pos)
+    public void RangedAttack(Vector2 pos)
     {
-        StartCoroutine(coolAttack(coolDuration,pos));
+        StartCoroutine(rangedAttack(rangedAttackDuration,pos));
     }
-    public float duration = 1f;
-    public float coolDuration = 2f;
+    public float meleeAttackDuration = 1f;
+    public float rangedAttackDuration = 2f;
 
 
     public void Jump(float jumpStrenghter = 1f)
     {
         if (!jumpReloaded || jumpReload > 0)
             return;
-        // rb.velocity += new Vector2(0, Time.deltaTime * jumpStrenghter * jumpStrenght);
         float strenght = Time.deltaTime * jumpStrenghter * jumpStrenght / normals.Length;
-        //  for 
-        // rb.AddForce(new Vector2(0, ), ForceMode2D.Impulse);
         if (rb.velocity.y < strenght)
             rb.velocity = new Vector2(rb.velocity.x, strenght);
-        //rb.AddForce( ForceMode2D.Impulse);
-        // rb.MovePosition(rb.position + new Vector2(0,Time.deltaTime * jumpStrenghter * moveSpeed));
         jumpReload = JumpReloadTime;
         jumpReloaded = false;
     }
@@ -224,17 +214,16 @@ public class CharacterScript : MonoBehaviour
                 dashSide = whereHowMuch/Mathf.Abs(whereHowMuch);
             }
             whereHowMuch = dashSide * dashMultiplier;
-            Debug.Log(whereHowMuch);
+
         }
-        //  rb.AddForce(new Vector2(Time.deltaTime * whereHowMuch * moveSpeed,0), ForceMode2D.Impulse);
-        //rb.AddForce(new Vector2(Time.deltaTime * whereHowMuch * moveSpeed, 0), ForceMode2D.Impulse);
+
         float change = Time.deltaTime * whereHowMuch * moveSpeed;
         if (change > 0 && right.counter > 0)
             change = 0;
         else if (change < 0 && left.counter > 0)
             change = 0;
         rb.velocity = new Vector2(change, rb.velocity.y);
-        //  rb.MovePosition(rb.transform.position+new Vector3(Time.deltaTime * whereHowMuch * moveSpeed, 0));
+
     }
 
     public void Fall(bool fall)
@@ -251,27 +240,22 @@ public class CharacterScript : MonoBehaviour
     }
 
     public static int curentlyAlive = 0;
-    public AudioClip meleeAttack, rangedAttack;
-    // Update is called once per frame
+    public AudioClip meleeAttackSound, rangedAttackSound;
+
     void Update()
     {
         if (hp <= 0)
         {
             if (restartOnDeath)
             {
-                curentlyAlive = 0;
-                GoToScene.timesOnThatScene++;
-                SceneManager.LoadScene(GoToScene.sceneNow);
+                GoToScene.ReloadAScene();
             }
             else
             {
                 curentlyAlive--;
                 if (GoToScene.sceneNow == "BossScene")
                 {
-                    curentlyAlive = 0;
-                    GoToScene.sceneNow = "Win";
-                    GoToScene.timesOnThatScene=0;
-                    SceneManager.LoadScene("Win");
+                    GoToScene.LoadAScene("Win");
                 }
                 Destroy(gameObject);
             }

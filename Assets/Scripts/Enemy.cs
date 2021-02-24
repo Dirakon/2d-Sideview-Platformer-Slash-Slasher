@@ -56,7 +56,7 @@ public class Enemy : MonoBehaviour
         if (haveFaceContact)
         {
             if (isRanged)
-                guy.CoolAttack(target.position);
+                guy.RangedAttack(target.position);
             if (Vector2.Distance(transform.position,target.position) < desiredDistance)
             {
                 return;

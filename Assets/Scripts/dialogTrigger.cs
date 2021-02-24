@@ -37,20 +37,17 @@ public class dialogTrigger : MonoBehaviour
         {
             if (pl.decesion == 1)
             {
-                //Dont touch
-                Debug.Log("UNKIL!");
+                //Abandon
+                Debug.Log("Abandon");
 
-                CharacterScript.curentlyAlive = 0;
-                GoToScene.timesOnThatScene = 0;
-                GoToScene.sceneNow = "UnkillScene";
-                SceneManager.LoadScene("UnkillScene");
+                GoToScene.LoadAScene("UnkillScene");
 
                 Destroy(gameObject);
             }
             else if (pl.decesion == 2)
             {
-                //Kill
-                Debug.Log("KIL!");
+                //Save
+                Debug.Log("Save");
                 parent.GetComponent<BoxCollider2D>().isTrigger = true;
                 Player.singleton.StartCoroutine(ignoreInDueTime());
                 Player.singleton.startSize = Player.singleton.endSize; 

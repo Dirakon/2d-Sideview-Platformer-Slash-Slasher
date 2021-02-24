@@ -3456,6 +3456,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 843e80468ad5ebd4796fbbe5df263963, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogBeforeThat: 0
+  dialog: []
   nextScene: BossScene
 --- !u!61 &1235943133
 BoxCollider2D:
@@ -4010,6 +4012,14 @@ PrefabInstance:
       propertyPath: whatToDo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: out1
+      value: 
+      objectReference: {fileID: 8300000, guid: 51b83eb60e886994f84cb88be5025bdc, type: 3}
+    - target: {fileID: 1164433214, guid: 9a2a65d31bf7931479276775474bb7d1, type: 3}
+      propertyPath: in1
+      value: 
+      objectReference: {fileID: 8300000, guid: 51b83eb60e886994f84cb88be5025bdc, type: 3}
     - target: {fileID: 4620297453563102387, guid: 9a2a65d31bf7931479276775474bb7d1,
         type: 3}
       propertyPath: m_LocalPosition.y

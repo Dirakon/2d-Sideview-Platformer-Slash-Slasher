@@ -18,7 +18,6 @@ public class BMController : MonoBehaviour
             Destroy(gameObject);
         if (currentlyOnBoss)
             return;
-        Debug.Log(GoToScene.sceneNow);
         if (GoToScene.sceneNow == "BossScene")
         {
             currentlyOnBoss = true;

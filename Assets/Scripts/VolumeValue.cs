@@ -7,8 +7,6 @@ public class VolumeValue : MonoBehaviour
 {
     public GameObject BGMusic;  //Ваш объект с фоновой музыкой
     private AudioSource audioSrc;
-    public static float musicVolume;
-    public Slider VolValue; //Слайдер если нужна регулировка
     public GameObject[] objs1;
 
     void Awake()
@@ -24,15 +22,6 @@ public class VolumeValue : MonoBehaviour
         {
             BGMusic = GameObject.Find("BGMusic"); //обращаемся к объекту, если он уже существует.
         }
-        if (!PlayerPrefs.HasKey("MusicVol"))
-        {
-            musicVolume = 0.1f;  //тут громкость по умолчанию
-        }
-        else
-        {
-            musicVolume = PlayerPrefs.GetFloat("MusicVol"); //сохраненная громкость
-            VolValue.value = PlayerPrefs.GetFloat("MusicVol"); //меняем значение слайдера на сохраненную громкость
-        }
     }
     void Start()
     {
@@ -42,12 +31,6 @@ public class VolumeValue : MonoBehaviour
 
     void Update()
     {
-        audioSrc.volume = musicVolume;  //устанавливаем громкость при изменении слайдера
     }
 
-    public void SetVolume(float vol)
-    {
-        musicVolume = vol;
-        PlayerPrefs.SetFloat("MusicVol", vol); //сохраняем громкость
-    }
 }
